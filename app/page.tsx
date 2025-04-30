@@ -1,11 +1,9 @@
 import Link from 'next/link';
+import Navbar from './components/Navbar';
 export default function Page() {
   return <>
-    <Link href="/home">Home</Link>
 
-  <h1>Login</h1>
-  <form name="login">
+    <h1>Main</h1>
 
-  </form>
   </>
 }

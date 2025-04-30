@@ -1,4 +1,5 @@
-import Navbar from "../public/components/Navbar"
+import { Html } from "next/document"
+import Navbar from "./components/Navbar"
 
 export default function RootLayout({
   children,
@@ -11,4 +12,8 @@ export default function RootLayout({
       <body>{children}</body>
     </html>
   )
+
+
+
+
 }

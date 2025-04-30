@@ -4,7 +4,9 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <nav style={styles.navbar}>
+
       <div style={styles.logo}>LOGO</div>
+
       <ul style={styles.navLinks}>
         <li style={styles.navItem}>
           <Link href="/">Home</Link>
@@ -19,6 +21,7 @@ const Navbar = () => {
           <Link href="/contact">Contact Us</Link>
         </li>
       </ul>
+
     </nav>
   );
 };
@@ -32,15 +35,19 @@ const styles = {
     backgroundColor: "#333",
     color: "#fff",
   },
+
   logo: {
     fontSize: "1.5em",
     fontWeight: "bold",
   },
+
   navLinks: {
     listStyle: "none",
     display: "flex",
     gap: "15px",
+    fontstyle: "bold"
   },
+
   navItem: {
     color: "#fff",
     textDecoration: "none",
