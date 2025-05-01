@@ -1,16 +1,17 @@
-// components/Navbar.tsx
 import Link from "next/link";
 import NavButton from "./NavButton";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center bg-slate-900 text-neutral-50 pl-5 pr-5">
+    <>
+    <div className="flex justify-between items-center bg-slate-900 text-neutral-50 pl-5 pr-5">
       <img className="w-50 m-5 filter: invert" src="/logo2.png" alt="Logo"></img>
       <li style={styles.navLinks}>
-        <NavButton href="./" text="Projects" />
-        <NavButton href="/home" text="Contact" />
+        <NavButton href="./" text="Home" />
+        <NavButton href="/contact" text="Contact" />
       </li>
-    </nav>
+    </div>
+    </>
   );
 };
 

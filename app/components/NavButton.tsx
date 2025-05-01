@@ -5,9 +5,10 @@ interface NavButtonProps {
     text: string;
 }
 
+
 const NavButton: React.FC<NavButtonProps> = ({ href, text }) => {
     return (
-        <Link href={href}>{text}</Link>
+        <Link className='font-[dogica] text-neutral-400 hover:text-neutral-50 hover:text-shadow-neutral-50' href={href}>{text}</Link>
     );
 };
 
