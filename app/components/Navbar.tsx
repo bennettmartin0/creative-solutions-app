@@ -1,40 +1,21 @@
 // components/Navbar.tsx
 import Link from "next/link";
+import NavButton from "./NavButton";
 
 const Navbar = () => {
   return (
-    <nav style={styles.navbar}>
-
-      <div style={styles.logo}>LOGO</div>
-
-      <ul style={styles.navLinks}>
-        <li style={styles.navItem}>
-          <Link href="/">Home</Link>
-        </li>
-        <li style={styles.navItem}>
-          <Link href="/about">About</Link>
-        </li>
-        <li style={styles.navItem}>
-          <Link href="/services">Services</Link>
-        </li>
-        <li style={styles.navItem}>
-          <Link href="/contact">Contact Us</Link>
-        </li>
-      </ul>
-
+    <nav className="flex justify-between items-center bg-slate-900 text-neutral-50 pl-5 pr-5">
+      <img className="w-50 m-5 filter: invert" src="/logo2.png" alt="Logo"></img>
+      <li style={styles.navLinks}>
+        <NavButton href="./" text="Projects" />
+        <NavButton href="/home" text="Contact" />
+      </li>
     </nav>
   );
 };
 
 const styles = {
-  navbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "10px 20px",
-    backgroundColor: "#333",
-    color: "#fff",
-  },
+
 
   logo: {
     fontSize: "1.5em",
