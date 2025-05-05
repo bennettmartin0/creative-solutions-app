@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Html } from "next/document"
+import Link from 'next/link';
+
 import './globals.css'
+import BlobTank from './components/BlobTank';
 import Navbar from "./components/Navbar"
 
 export const metadata: Metadata = {
@@ -17,6 +20,8 @@ export default function RootLayout({
     <html lang="en">      
       <body>
       <Navbar />
+      <BlobTank />
+
       {children}
       </body>
     </html>
