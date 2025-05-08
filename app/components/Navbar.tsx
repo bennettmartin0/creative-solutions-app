@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <>
     <div className="flex justify-between items-center bg-slate-900 text-neutral-50 pl-5 pr-5">
-      <img className="w-50 m-5 filter: invert" src="/logo2.png" alt="Logo"></img>
+      <img className="w-50 m-5 filter: invert" src="/img/logo2.png" alt="Logo"></img>
       <li style={styles.navLinks}>
         <NavButton href="./" text="Home" />
         <NavButton href="/contact" text="Contact" />

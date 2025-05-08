@@ -20,14 +20,8 @@ export default function RootLayout({
     <html lang="en">      
       <body>
       <Navbar />
-      <BlobTank />
-
       {children}
       </body>
     </html>
   )
-
-
-
-
 }
