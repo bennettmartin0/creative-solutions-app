@@ -77,3 +77,7 @@ body {
 }
 
 
+.bg-radial-gradient {
+  background: radial-gradient( ellipse at center, #000000, #113a6b);
+}
+
