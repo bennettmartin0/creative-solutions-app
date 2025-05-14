@@ -4,10 +4,14 @@ import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 
 const MAX_CONNECTION_DISTANCE = 150;
-const POINT_RADIUS = 6;
+const POINT_RADIUS = 3;
 const FADE_OUT_DURATION = 10;
 const MOVEMENT_SPEED = 1;
-const SPAWN_COUNT = 3;
+const SPAWN_COUNT = 2;
+const GLOW_STRENGTH = 5; // Adjust glow intensity
+const POINT_COLOR = "#03f4fc"; // Customize point and glow color
+const LINE_COLOR = "#fff"; // Customize line color
+const LINE_GLOW_STRENGTH = 6; // Adjust glow strength for lines
 
 interface Point {
   x: number;
@@ -60,13 +64,32 @@ const CircleManager: React.FC<{ points: Point[]; setPoints: React.Dispatch<React
 
   return (
     <>
+      <defs>
+        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation={GLOW_STRENGTH} result="blurred" />
+          <feMerge>
+            <feMergeNode in="blurred" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <filter id="lineGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation={LINE_GLOW_STRENGTH} result="blurredLine" />
+          <feMerge>
+            <feMergeNode in="blurredLine" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
       {points.map((point, index) => (
         <motion.circle
           key={`circle-${index}`}
           cx={point.x}
           cy={point.y}
           r={POINT_RADIUS}
-          fill="#00f0ff"
+          fill={POINT_COLOR}
+          filter="url(#softGlow)"
           animate={{ opacity: point.opacity }}
           transition={{
             duration: 1,
@@ -99,8 +122,9 @@ const ConnectionManager: React.FC<{ points: Point[] }> = ({ points }) => {
             y1={line.start.y}
             x2={line.end.x}
             y2={line.end.y}
-            stroke="#0088ff"
+            stroke={LINE_COLOR}
             strokeWidth="0.5"
+            filter="url(#lineGlow)" // Applies the glow effect to lines
             animate={{ opacity: Math.min(line.start.opacity, line.end.opacity) }}
             transition={{
               duration: 1,

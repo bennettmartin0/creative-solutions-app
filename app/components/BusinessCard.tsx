@@ -37,7 +37,7 @@ const BusinessCard: React.FC = () => {
   };
 
   return (
-    <div className="perspective-distant bg-none h-screen flex items-center justify-center">
+    <div className="perspective-distant opacity-80 bg-none h-screen flex items-center justify-center">
       {/* Wrapper to prevent abrupt pointer leave */}
       <div className="relative w-[600px] h-[420px] flex items-center justify-center">
         <motion.div
@@ -53,18 +53,19 @@ const BusinessCard: React.FC = () => {
           onPointerMove={handlePointerMove}
           onPointerLeave={handlePointerLeave}
         >
-          <span className="text-5xl font-[NineteenFortyTwo] font-bold bg-gradient-to-r from-gray-300 via-gray-500 to-gray-100 bg-clip-text text-transparent shadow-inner tracking-wide">
+          <span className="text-3xl font-[dogica] font-bold bg-gradient-to-r from-gray-300 via-gray-500 to-gray-100 bg-clip-text text-transparent shadow-inner tracking-wide">
             Bennett Martin
           </span>
-          <span className="text-4xl font-[NineteenFortyTwo] bg-gradient-to-r from-gray-300 via-gray-500 to-gray-100 bg-clip-text text-transparent shadow-inner tracking-wide text-left">
+          <span className="text-2xl font-[dogica] bg-gradient-to-r from-gray-300 via-gray-500 to-gray-100 bg-clip-text text-transparent shadow-inner tracking-wide text-left">
             Creative Solutions
           </span>
-          <a href="mailto:bennett@bennettmartincreativesolutions.com" className="text-xl font-[NineteenFortyTwo] bg-gradient-to-r from-gray-300 via-gray-500 to-gray-100 bg-clip-text text-transparent shadow-inner tracking-wide text-left">
+          <br></br>
+          <a href="mailto:bennett@bennettmartincreativesolutions.com" className="text-xl font-[dogica] bg-gradient-to-r from-gray-300 via-gray-500 to-gray-100 bg-clip-text text-transparent shadow-inner tracking-wide text-left">
             email_me
           </a>
-          <span className="text-xl font-[NineteenFortyTwo] bg-gradient-to-r from-gray-300 via-gray-500 to-gray-100 bg-clip-text text-transparent shadow-inner tracking-wide text-left">
-            +1 (614) 796-3980
-          </span>
+          <a href="tel:+1 (614) 796-3980" className="text-xl font-[dogica] bg-gradient-to-r from-gray-300 via-gray-500 to-gray-100 bg-clip-text text-transparent shadow-inner tracking-wide text-left">
+          +1 (614) 796-3980
+          </a>
         </motion.div>
       </div>
     </div>
