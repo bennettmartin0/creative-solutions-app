@@ -1,6 +1,5 @@
 import BlobTankNetwork from "../components/BlobTankNetwork";
 import BusinessCard from "../components/BusinessCard";
-import TechyNetwork from "../components/BlobTankNetwork";
 
 export default function Page() {
   return(
