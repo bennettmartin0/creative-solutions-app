@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #1c2532;
   --foreground: #171717;
 }
 
@@ -14,35 +14,21 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1c2532;
     --foreground: #ededed;
   }
 }
 
 @font-face {
   font-family: 'dogica';
-  src: url('/fonts/dogica.otf') format('opentype');
+  src: url('/public/fonts/dogica.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NineteenFortyTwo';
-  src: url('/fonts/1942.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'atwriter';
-  src: url('/fonts/atwriter.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'OldNewspaperTypes';
-  src: url('/fonts/OldNewspaperTypes.ttf') format('truetype');
+  src: url('/public/fonts/1942.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

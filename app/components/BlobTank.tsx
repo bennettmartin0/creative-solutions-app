@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Blob from "./Blob";
-import Link from "next/link";
 import { motion } from "motion/react";
 
 
@@ -22,7 +21,7 @@ const BlobTank: React.FC = () => {
     if (blobs.length === 0) {
       setBlobs(Array.from({ length: 12 }, (_, index) => ({ id: index, ...generateRandomBlob() })));
     }
-  }, [blobs]); // ✅ Prevents unnecessary re-renders
+  }, [blobs]);
 
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-gray-800 flex items-center justify-center">
@@ -33,7 +32,7 @@ const BlobTank: React.FC = () => {
             className="absolute"
             initial={{ top: `${blob.initialPosition.top}%`, left: `${blob.initialPosition.left}%` }}
             animate={{
-              x: [0, Math.random() * 500 - 250, Math.random() * 500 - 250, 0], // ✅ Extended wandering distance
+              x: [0, Math.random() * 500 - 250, Math.random() * 500 - 250, 0],
               y: [0, Math.random() * 500 - 250, Math.random() * 500 - 250, 0],
               scale: [1, 1.2, 1],
             }}
@@ -49,18 +48,6 @@ const BlobTank: React.FC = () => {
       ) : (
         <></>
       )}
-
-      {/* Centered text and links */}
-      <div className="absolute flex flex-col items-center justify-center text-center z-10">
-        <h1 className="text-4xl font-[dogica] text-neutral-50 p-10">Creative Solutions</h1>
-        <br />
-        <br />
-        <h2 className="text-2xl font-[dogica] text-neutral-400">
-          <Link href="/web" className="text-neutral-50 hover:text-neutral-400">Web</Link>
-          |
-          <Link href="/music" className="text-neutral-50 hover:text-neutral-400">Music</Link>
-        </h2>
-      </div>
     </div>
   );
 };
