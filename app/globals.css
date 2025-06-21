@@ -21,14 +21,14 @@
 
 @font-face {
   font-family: 'dogica';
-  src: url('/public/fonts/dogica.otf') format('opentype');
+  src: url('/fonts/dogica.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'NineteenFortyTwo';
-  src: url('/public/fonts/1942.ttf') format('truetype');
+  src: url('/fonts/1942.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -44,9 +44,12 @@ body {
 
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-200px);
   }
@@ -56,7 +59,7 @@ body {
   animation: float 5s infinite ease-in-out;
 }
 
-.business-card{
+.business-card {
   background-image: url('/img/paper_texture_539x360.jpg');
   width: 539px;
   height: 360px;
@@ -64,6 +67,5 @@ body {
 
 
 .bg-radial-gradient {
-  background: radial-gradient( ellipse at center, #000000, #113a6b);
+  background: radial-gradient(ellipse at center, #000000, #113a6b);
 }
-
