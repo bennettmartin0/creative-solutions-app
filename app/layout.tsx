@@ -5,7 +5,6 @@ import Link from 'next/link';
 import './globals.css'
 import BlobTank from './components/BlobTank';
 import Navbar from "./components/Navbar"
-import ZoomBackground from './components/ZoomBackground';
 import BlobTankNetwork from './components/BlobTankNetwork';
 
 export const metadata: Metadata = {
