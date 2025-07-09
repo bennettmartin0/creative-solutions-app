@@ -39,8 +39,10 @@ export async function updateSession(request: NextRequest) {
 
   if (
     !user &&
-    !request.nextUrl.pathname.startsWith('/login') &&
-    !request.nextUrl.pathname.startsWith('/auth')
+    !['/login', '/auth'].some(prefix => request.nextUrl.pathname.startsWith(prefix)) &&
+    !request.nextUrl.pathname.startsWith('/fonts') &&
+    !request.nextUrl.pathname.startsWith('/favicon') &&
+    !request.nextUrl.pathname.startsWith('/_next') // includes static chunks & CSS
   ) {
     // no user, potentially respond by redirecting the user to the login page
     const url = request.nextUrl.clone()

@@ -1,71 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1c2532;
+  --background: #b7c7e2;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1c2532;
+    --background: #1c222d;
     --foreground: #ededed;
   }
 }
 
+
 @font-face {
-  font-family: 'dogica';
-  src: url('/fonts/dogica.otf') format('opentype');
+  font-family: 'signature';
+  src: url('/fonts/signature.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'NineteenFortyTwo';
-  src: url('/fonts/1942.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
 }
-
-
 
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif, Dogica;
-}
-
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-200px);
-  }
-}
-
-.animate-float {
-  animation: float 5s infinite ease-in-out;
-}
-
-.business-card {
-  background-image: url('/img/paper_texture_539x360.jpg');
-  width: 539px;
-  height: 360px;
-}
-
-
-.bg-radial-gradient {
-  background: radial-gradient(ellipse at center, #000000, #113a6b);
+  font-family: Arial, Helvetica, sans-serif;
 }

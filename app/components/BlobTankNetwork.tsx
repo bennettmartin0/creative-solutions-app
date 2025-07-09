@@ -3,15 +3,15 @@
 import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 
-const MAX_CONNECTION_DISTANCE = 150;
-const POINT_RADIUS = 3;
-const FADE_OUT_DURATION = 10;
-const MOVEMENT_SPEED = 1;
-const SPAWN_COUNT = 2;
-const GLOW_STRENGTH = 5; // Adjust glow intensity
-const POINT_COLOR = "#03f4fc"; // Customize point and glow color
+const MAX_CONNECTION_DISTANCE = 500;
+const POINT_RADIUS = 6;
+const FADE_OUT_DURATION = 2;
+const MOVEMENT_SPEED = 0.5;
+const SPAWN_COUNT = 1;
+const GLOW_STRENGTH = 3; // Adjust glow intensity
+const POINT_COLOR = "#fff"; // Customize point and glow color
 const LINE_COLOR = "#fff"; // Customize line color
-const LINE_GLOW_STRENGTH = 6; // Adjust glow strength for lines
+const LINE_GLOW_STRENGTH = 1; // Adjust glow strength for lines
 
 interface Point {
   x: number;
@@ -30,8 +30,8 @@ const generatePoint = (existingPoints: Point[]): Point => {
     newPoint = {
       x: Math.random() * (window.innerWidth - margin * 2) + margin,
       y: Math.random() * (window.innerHeight - margin * 2) + margin,
-      vx: (Math.random() - 0.5) * MOVEMENT_SPEED,
-      vy: (Math.random() - 0.5) * MOVEMENT_SPEED,
+      vx: (Math.random() - 0.1) * MOVEMENT_SPEED,
+      vy: (Math.random() - 0.1) * MOVEMENT_SPEED,
       createdAt: Date.now(),
       opacity: 1,
     };
@@ -92,7 +92,7 @@ const CircleManager: React.FC<{ points: Point[]; setPoints: React.Dispatch<React
           filter="url(#softGlow)"
           animate={{ opacity: point.opacity }}
           transition={{
-            duration: 1,
+            duration: 0.1,
             ease: "easeOut",
           }}
         />
@@ -127,7 +127,7 @@ const ConnectionManager: React.FC<{ points: Point[] }> = ({ points }) => {
             filter="url(#lineGlow)" // Applies the glow effect to lines
             animate={{ opacity: Math.min(line.start.opacity, line.end.opacity) }}
             transition={{
-              duration: 1,
+              duration: 0.1,
               ease: "easeOut",
             }}
           />
@@ -151,7 +151,7 @@ const BlobTankNetwork: React.FC = () => {
   }, []);
 
   return (
-    <div className="absolute w-full h-screen bg-black flex items-center justify-center">
+    <div className="absolute -z-10 w-full h-screen flex items-center justify-center">
       <svg className="absolute w-full h-full">
         <CircleManager points={points} setPoints={setPoints} />
         <ConnectionManager points={points} />

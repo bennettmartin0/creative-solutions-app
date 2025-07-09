@@ -2,11 +2,9 @@ import type { Metadata } from 'next'
 import { Html } from "next/document"
 import Link from 'next/link';
 
-import './globals.css'
-import BlobTank from './components/BlobTank';
-import Navbar from "./components/Navbar"
-import ZoomBackground from './components/ZoomBackground';
-import BlobTankNetwork from './components/BlobTankNetwork';
+import '../globals.css'
+import Navbar from "../components/Navbar"
+import BlobTankNetwork from '../components/BlobTankNetwork';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <BlobTankNetwork />
         {children}
+
       </body>
     </html>
   )

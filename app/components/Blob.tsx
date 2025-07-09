@@ -20,52 +20,52 @@ const Blob: React.FC<BlobProps> = ({ size, initialPosition, initialColor }) => {
     <>
       {/* Main blob with independent color transition */}
       <motion.div
-  className={`absolute rounded-full ${size} opacity-50 blur-sm`}
-  style={{
-    top: `${initialPosition.top}%`,
-    left: `${initialPosition.left}%`,
-    position: "absolute",
-    backgroundColor: initialColor,
-  }}
-  animate={{
-    backgroundColor: [
-      initialColor, 
-      "#3B82F6", "#EF4444", "#22C55E", "#EAB308", "#A855F7", 
-      initialColor
-    ],
-    scale: [1, Math.random() * 1.5 + 0.5, 1], // 🔹 Smoothly enlarges & shrinks
-  }}
-  transition={{
-    duration: 10,
-    repeat: Infinity,
-    ease: "easeInOut",
-    delay: Math.random() * 5,
-  }}
-/>
+        className={`absolute rounded-full ${size} opacity-50 blur-sm`}
+        style={{
+          top: `${initialPosition.top}%`,
+          left: `${initialPosition.left}%`,
+          position: "absolute",
+          backgroundColor: initialColor,
+        }}
+        animate={{
+          backgroundColor: [
+            initialColor,
+            "#3B82F6", "#EF4444", "#22C55E", "#EAB308", "#A855F7",
+            initialColor
+          ],
+          scale: [1, Math.random() * 1.5 + 0.5, 1], // 🔹 Smoothly enlarges & shrinks
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: Math.random() * 5,
+        }}
+      />
 
       {/* Blurred glow effect */}
-        <motion.div
-    className={`absolute rounded-full ${size} opacity-50 blur-xl`}
-    style={{
-        top: `${initialPosition.top}%`,
-        left: `${initialPosition.left}%`,
-        position: "absolute",
-        backgroundColor: initialColor, // ✅ Each blob starts uniquely
-    }}
-    animate={{
-        backgroundColor: [
-        initialColor, 
-        "#3B82F6", "#EF4444", "#22C55E", "#EAB308", "#A855F7", 
-        initialColor // ✅ Comes back to its unique starting color for seamless looping
-        ],
-    }}
-    transition={{
-        duration: 10, // 🔹 Increased duration for smoother shifts
-        repeat: Infinity,
-        ease: "easeInOut", // ✅ Uses gradual easing instead of instant changes
-        delay: Math.random() * 5, // ✅ Staggered transition timing per blob
-    }}
-    />
+      <motion.div
+        className={`absolute rounded-full ${size} opacity-50 blur-xl`}
+        style={{
+          top: `${initialPosition.top}%`,
+          left: `${initialPosition.left}%`,
+          position: "absolute",
+          backgroundColor: initialColor, // ✅ Each blob starts uniquely
+        }}
+        animate={{
+          backgroundColor: [
+            initialColor,
+            "#3B82F6", "#EF4444", "#22C55E", "#EAB308", "#A855F7",
+            initialColor // ✅ Comes back to its unique starting color for seamless looping
+          ],
+        }}
+        transition={{
+          duration: 10, // 🔹 Increased duration for smoother shifts
+          repeat: Infinity,
+          ease: "easeInOut", // ✅ Uses gradual easing instead of instant changes
+          delay: Math.random() * 5, // ✅ Staggered transition timing per blob
+        }}
+      />
     </>
   );
 };
